@@ -1,0 +1,95 @@
+/* Navbar.css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #191970;
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+}
+
+nav .title {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+nav ul li a:not(.active):hover {
+    background-color: #87CEFA;
+}
+
+.active {
+    background-color: #87CEFA;
+}
+
+/* Hide the menu icon by default */
+nav .menu {
+    display: none;
+}
+
+/* Show menu icon and adjust layout for smaller screens */
+@media (max-width: 480px) {
+    nav .menu {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    nav .menu span {
+        height: 0.3rem;
+        width: 100%;
+        border-radius: 0.15rem;
+        background-color: #fff;
+        transition: 0.3s ease;
+    }
+
+    /* Hide the nav items by default on mobile */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #191970;
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* Show the nav items when the menu is open */
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        margin: 0.5rem 0;
+    }
+}
